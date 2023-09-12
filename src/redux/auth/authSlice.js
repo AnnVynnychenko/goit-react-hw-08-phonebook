@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { initialStateAuth } from 'redux/auth/initialStateAuth';
-import { register } from './authFetchApi';
+// import { register } from './authFetchApi';
 
 const authSlice = createSlice({
   name: 'auth',
