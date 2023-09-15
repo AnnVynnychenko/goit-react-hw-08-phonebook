@@ -1,43 +1,40 @@
 .contactList {
-  margin-top: 30px;
-  padding-left: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 .contactItem {
-  list-style: none;
-  font-size: 18px;
+  flex-basis: fit-content;
+  padding: 15px;
+  background-color: #2196f3;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
-.contactItem:not(:last-child) {
-  margin-bottom: 10px;
+.overflow {
+  word-wrap: break-word;
 }
 
 .telNumber {
-  margin: 0 15px;
+  font-weight: 600;
+  font-size: 15px;
 }
 
-.deleteContact {
+.deleteContactBtn {
+  background-color: #f9a825;
   color: #fff;
-  outline: 0;
-  border: 1px solid black;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
   cursor: pointer;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease-in-out;
 }
 
-.deleteContact:after {
-  content: '';
-  background-color: blue;
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  height: 100%;
-  top: 3px;
-  left: 3px;
-  transition: 0.2s;
-}
-
-.deleteContact:hover:after {
-  top: 0px;
-  left: 0px;
+.deleteContactBtn:is(:hover, :focus) {
+  background-color: #ff5722;
 }

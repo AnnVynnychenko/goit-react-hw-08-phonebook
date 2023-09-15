@@ -1,13 +1,12 @@
-import { authSliceReducer } from './auth/authSlice';
+import { combineReducers } from '@reduxjs/toolkit';
+import { authPersistReducer } from './auth/authSlice';
 import { filterReducer } from './filter/filterSlice';
-
-const { combineReducers } = require('@reduxjs/toolkit');
-const { persistedContactsReducer } = require('./contacts/contactsSlice');
+import { contactsReducer } from './contacts/contactsSlice';
 
 const rootReducer = combineReducers({
-  contacts: persistedContactsReducer,
+  contacts: contactsReducer,
   filters: filterReducer,
-  auth: authSliceReducer,
+  auth: authPersistReducer,
 });
 
 export default rootReducer;

@@ -1,19 +1,19 @@
 import { useState } from 'react';
-import css from './ContactForm.module.css';
-import { useDispatch, useSelector } from 'react-redux';
+import css from '../../sharedStyles.module.css';
+import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/contactsFetchApi';
-import { getContacts } from 'redux/contacts/contactsSelectors';
+import { useContact } from 'hook';
 
 function ContactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  const items = useSelector(getContacts);
+  const { contacts } = useContact();
   const dispatch = useDispatch();
 
   const formSubmitHandler = e => {
     e.preventDefault();
-    const ifNameTaken = items.some(
-      item => item.name.toLowerCase() === name.toLowerCase()
+    const ifNameTaken = contacts.some(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
     );
     if (ifNameTaken) {
       return alert(`${name} is already in contacts`);
@@ -42,11 +42,11 @@ function ContactForm() {
   };
 
   return (
-    <form className={css.contactForm} onSubmit={formSubmitHandler}>
-      <label>
-        <span className={css.textForm}>Name</span>
+    <form className={css.formContainer} onSubmit={formSubmitHandler}>
+      <label className={css.formLabel}>
+        Name
         <input
-          className={css.contactInput}
+          className={css.formInput}
           type="text"
           name="name"
           value={name}
@@ -56,10 +56,10 @@ function ContactForm() {
           required
         />
       </label>
-      <label>
-        <span className={css.textForm}>Number</span>
+      <label className={css.formLabel}>
+        Number
         <input
-          className={css.contactInput}
+          className={css.formInput}
           type="tel"
           name="number"
           value={number}
@@ -69,7 +69,7 @@ function ContactForm() {
           required
         />
       </label>
-      <button type="submit" className={css.addContact}>
+      <button type="submit" className={css.formBtn}>
         Add contact
       </button>
     </form>

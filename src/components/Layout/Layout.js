@@ -1,13 +1,15 @@
 import AppBar from 'components/AppBar';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+import Loader from 'components/Loader';
 import { ToastContainer } from 'react-toastify';
+import css from './Layout.module.css';
 
 const Layout = () => {
   return (
-    <>
+    <div className={css.layout}>
       <AppBar />
-      <Suspense fallback={null}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
       <ToastContainer
@@ -22,7 +24,7 @@ const Layout = () => {
         pauseOnHover
         theme="colored"
       />
-    </>
+    </div>
   );
 };
 

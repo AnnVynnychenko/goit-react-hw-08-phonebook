@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/authFetchApi';
+import css from '../../sharedStyles.module.css';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -16,38 +17,24 @@ const RegisterForm = () => {
     e.currentTarget.reset();
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <form onSubmit={handleSubmit} className={css.formContainer}>
+      <label className={css.formLabel}>
         Username
-        <input type="text" name="name" />
+        <input type="text" name="name" className={css.formInput} />
       </label>
-      <label>
+      <label className={css.formLabel}>
         Email
-        <input type="email" name="email" />
+        <input type="email" name="email" className={css.formInput} />
       </label>
-      <label>
+      <label className={css.formLabel}>
         Password
-        <input type="password" name="password" />
+        <input type="password" name="password" className={css.formInput} />
       </label>
-      <button type="submit">Register</button>
+      <button type="submit" className={css.formBtn}>
+        Register
+      </button>
     </form>
   );
 };
 
 export default RegisterForm;
-
-// export const RegisterForm = () => {
-//   const dispatch = useDispatch();
-
-//   const handleSubmit = e => {
-//     e.preventDefault();
-//     const form = e.currentTarget;
-//     dispatch(
-//       register({
-//         name: form.elements.name.value,
-//         email: form.elements.email.value,
-//         password: form.elements.password.value,
-//       })
-//     );
-//     form.reset();
-//   };

@@ -1,0 +1,29 @@
+.userContainer {
+  display: flex;
+  gap: 25px;
+  background-color: #2196f3;
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.userName {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0;
+}
+
+.logoutButton {
+  background-color: #f9a825;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.logoutButton:is(:hover, :focus) {
+  background-color: #ff5722;
+}

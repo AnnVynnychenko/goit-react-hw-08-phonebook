@@ -1,8 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-import css from './Filter.module.css';
-import cssContacts from '../ContactForm/ContactForm.module.css';
-import { getFilterValue } from 'redux/contacts/contactsSelectors';
+import css from '../../sharedStyles.module.css';
 import { contactsFiltered } from 'redux/filter/filterSlice';
+import { getFilterValue } from 'redux/filter/filterSelectors';
 
 const Filter = () => {
   const filter = useSelector(getFilterValue);
@@ -12,16 +11,18 @@ const Filter = () => {
     dispatch(contactsFiltered(value));
   };
   return (
-    <label className={css.contactLabel}>
-      <span className={cssContacts.textForm}>Find contacts by name</span>
-      <input
-        className={`${cssContacts.contactInput} ${css.filterInput}`}
-        type="text"
-        value={filter}
-        onChange={filterContacts}
-        required
-      />
-    </label>
+    <div className={css.formContainer}>
+      <label className={css.formLabel}>
+        <p>Find contacts by name</p>
+        <input
+          className={css.formInput}
+          type="text"
+          value={filter}
+          onChange={filterContacts}
+          required
+        />
+      </label>
+    </div>
   );
 };
 

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import css from './PhoneBook.module.css';
+
 const PhoneBook = ({ titleBegin, titleEnd, children }) => {
   return (
     <section className={css.phoneBook}>

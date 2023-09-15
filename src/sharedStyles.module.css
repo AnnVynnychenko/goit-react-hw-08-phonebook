@@ -1,0 +1,57 @@
+.navLink {
+  font-size: 25px;
+  font-weight: 600;
+  color: #2196f3;
+  transition: color 0.3s ease-in-out;
+}
+
+.navLink:is(:hover, :focus) {
+  color: #ff5722;
+  transform: scale(1.1);
+}
+
+.formContainer {
+  width: 500px;
+  margin: 50px auto;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 17px;
+  font-size: 600;
+}
+
+.formInput {
+  width: 100%;
+  height: 40px;
+  padding: 8px 12px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 17px;
+  transition: border-radius 0.3s ease-in-out;
+}
+
+.formInput:is(:hover, :focus) {
+  border: 1px solid #ff5722;
+  outline: none;
+  border-radius: 20px;
+}
+
+.formBtn {
+  display: block;
+  padding: 13px 20px 13px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 4px;
+  background-color: #2196f3;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.formBtn:is(:hover, :focus) {
+  background-color: #ff5722;
+}

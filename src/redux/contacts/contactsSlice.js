@@ -5,8 +5,6 @@ import {
   deleteContact,
   fetchContacts,
 } from 'redux/contacts/contactsFetchApi';
-import storage from 'redux-persist/lib/storage';
-import persistReducer from 'redux-persist/es/persistReducer';
 
 const thunksArr = [fetchContacts, addContact, deleteContact];
 
@@ -57,13 +55,4 @@ const contactSlice = createSlice({
   },
 });
 
-const persistConfig = {
-  key: 'contacts',
-  storage,
-  whitelist: ['contacts'],
-};
-
-export const persistedContactsReducer = persistReducer(
-  persistConfig,
-  contactSlice.reducer
-);
+export const contactsReducer = contactSlice.reducer;
