@@ -3,6 +3,7 @@ import css from '../../sharedStyles.module.css';
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/contacts/contactsFetchApi';
 import { useContact } from 'hook';
+import { toast } from 'react-toastify';
 
 function ContactForm() {
   const [name, setName] = useState('');
@@ -16,7 +17,8 @@ function ContactForm() {
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
     if (ifNameTaken) {
-      return alert(`${name} is already in contacts`);
+      toast.info(`${name} is already in contacts`);
+      return;
     }
     dispatch(addContact({ name, number }));
     reset();

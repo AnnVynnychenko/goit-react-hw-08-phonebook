@@ -4,9 +4,9 @@
 }
 
 .title {
-  color: blue;
+  color: var(--blue);
 }
 
 .titleEnd {
-  color: #f9a825;
+  color: var(--deleteBtnBgColor);
 }

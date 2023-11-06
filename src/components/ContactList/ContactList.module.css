@@ -1,16 +1,16 @@
 .contactList {
-  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
+  padding: 0;
 }
 
 .contactItem {
   flex-basis: fit-content;
   padding: 15px;
-  background-color: #2196f3;
-  color: #fff;
+  background-color: var(--secondAccentColor);
+  color: var(--textColor);
   border-radius: 8px;
   font-size: 20px;
   font-weight: 700;
@@ -26,8 +26,8 @@
 }
 
 .deleteContactBtn {
-  background-color: #f9a825;
-  color: #fff;
+  background-color: var(--deleteBtnBgColor);
+  color: var(--textColor);
   border: none;
   padding: 5px 10px;
   border-radius: 4px;
@@ -36,5 +36,5 @@
 }
 
 .deleteContactBtn:is(:hover, :focus) {
-  background-color: #ff5722;
+  background-color: var(--mainAccentColor);
 }

@@ -17,11 +17,7 @@ function App() {
   const { isRefreshing } = useAuth();
 
   useEffect(() => {
-    const fetchData = async () => {
-      dispatch(currentUser());
-    };
-
-    fetchData();
+    dispatch(currentUser());
   }, [dispatch]);
 
   return (

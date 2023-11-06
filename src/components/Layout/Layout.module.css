@@ -1,3 +1,8 @@
 .layout {
   background-color: linear-gradient(to bottom, #005bbb 50%, #ffd100 50%);
 }
+
+.main {
+  position: relative;
+  height: 100vh;
+}

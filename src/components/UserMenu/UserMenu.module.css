@@ -1,8 +1,8 @@
 .userContainer {
   display: flex;
   gap: 25px;
-  background-color: #2196f3;
-  color: #fff;
+  background-color: var(--secondAccentColor);
+  color: var(--textColor);
   padding: 8px;
   border-radius: 8px;
   align-items: center;
@@ -15,8 +15,8 @@
 }
 
 .logoutButton {
-  background-color: #f9a825;
-  color: #fff;
+  background-color: var(--deleteBtnBgColor);
+  color: var(--textColor);
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
@@ -25,5 +25,5 @@
 }
 
 .logoutButton:is(:hover, :focus) {
-  background-color: #ff5722;
+  background-color: var(--mainAccentColor);
 }
